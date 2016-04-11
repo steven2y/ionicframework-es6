@@ -5,8 +5,8 @@
   "scripts": {
     "android-deploy": "ionic run android",
     "android-emulate": "ionic emulate android",
-    "start": "ionic serve",
-    "build": "gulp scripts",
+    "start": "ionic serve -b",
+    "build": "gulp build",
     "watch": "nodemon --exec 'npm run build && npm run start' -e js,scss -i www/js/application.js"
   },
   "dependencies": {

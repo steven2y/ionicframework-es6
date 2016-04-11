@@ -13,6 +13,7 @@ var paths = {
 };
 
 gulp.task('default', ['sass']);
+gulp.task('build', ['copyhtml', 'scripts']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -51,11 +52,17 @@ gulp.task('git-check', function(done) {
   done();
 });
 
+
 gulp.task('scripts', function() {
   gulp.src('js/bootstrap.js')
     .pipe(browserify({
       transform: ['babelify']
     }))
     .pipe(rename('application.js'))
+    .pipe(gulp.dest('www/js'));
+});
+
+gulp.task('copyhtml', function() {
+  gulp.src('js/**/*.html')
     .pipe(gulp.dest('www/js'));
 });

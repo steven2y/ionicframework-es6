@@ -6,8 +6,9 @@ mod.config(function($stateProvider, $urlRouterProvider) {
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'templates/menu.html',
-      controller: 'AppCtrl'
+      templateUrl: 'js/main/views/menu.html',
+      controller:'MainController',
+      controllerAs: 'mainCtrl'
     })
 
     .state('app.search', {

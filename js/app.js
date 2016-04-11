@@ -1,4 +1,6 @@
 import './controllers';
-const mod = angular.module('app', ['ionic', 'starter.controllers']);
+import './main';
+
+const mod = angular.module('app', ['ionic', 'starter.controllers', 'main']);
 
 export default mod;
